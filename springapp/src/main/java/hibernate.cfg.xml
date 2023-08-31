@@ -4,14 +4,21 @@
 
 <hibernate-configuration>
     <session-factory>
-        
-        
-        
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernateHpql?createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">nithish@2002</property>
+
+        <!-- Use the appropriate Hibernate dialect for MySQL 8 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Schema auto-generation settings -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Other Hibernate properties -->
         
-        
-        
-        
+        <!-- Add your entity classes here -->
+        <mapping class="com.examly.springapp.entity.Student"/>
        
     </session-factory>
 </hibernate-configuration>
